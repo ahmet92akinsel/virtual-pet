@@ -1,3 +1,3 @@
-function Pet() {}
+function Pet() {};
 
 module.exports = Pet;
