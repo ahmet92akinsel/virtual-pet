@@ -1,0 +1,70 @@
+ /*this.checkUp = function(){
+        this.fitness
+        this.hunger
+        let petNeedsWalk = (pet.fitness <= 3)
+        let petsHunger = (pet.hunger >= 5)
+        let petWantsWalkAndFood = (petNeedsWalk, petsHunger)
+
+    if(pet.fitness <= 3){
+    console.log('I need a walk');
+    };
+    if(pet.hunger >= 5){
+    console.log('I am hungry');
+    };
+    if(petWantsWalkAndFood === true){
+    console.log('I am hungry AND I need a walk');
+    } else {
+    console.log('I fell great!')
+    };   
+
+    };
+*/
+
+describe('checkUp',() => {
+        it('returns pets needs', () => {
+          const pet = new Pet('Fido');
+          pet.checkUp();
+
+          let petNeedsWalk = (pet.fitness <= 3)
+          let petsHunger = (pet.hunger >= 5)
+          let petWantsWalkAndFood = (petNeedsWalk, petsHunger)
+
+          expect(petNeedsWalk).toEqual('I need a walk')
+          expect(petsHunger).toEqual('I am hungry')
+          expect(petWantsWalkAndFood === true).toEqual('I am hungry AND I need a walk')
+          expect(petWantsWalkAndFood !== true).toEqual('I fell great!')
+        })
+      });
+
+      describe('growUp', () => {
+        it('increments the age by 1', () => {
+          const pet = new Pet('Fido');
+          const x = pet.age;
+          pet.growUp();
+          expect(pet.age).toBe(x + 1);
+        });
+        it('increments the hunger by 5', () => {
+            const pet = new Pet('Fido');
+            const x = pet.hunger;
+            pet.growUp();
+            expect(pet.hunger).toBe(x + 5);
+          });
+          it('decreases the fitness property by 3', () => {
+            const pet = new Pet('Fido');
+            const x = pet.fitness;
+            pet.growUp();
+            expect(pet.fitness).toBe(x - 3);
+          });
+      });
+    describe('walk', () => {
+        it('increases fitness by 4, if it is higher than 6, equals it to 10', () => {
+          const pet = new Pet('Fido');
+          const x = pet.fitness;
+          pet.walk();
+          if (pet.fitness >= 6) {
+            expect(pet.fitness).toBe(10);
+          } else {
+            expect(pet.fitness).toBe(x + 4);
+          }
+        });
+      });
