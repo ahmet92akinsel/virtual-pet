@@ -32,9 +32,7 @@ function Pet(name) {
       return (this.hunger -= 3);
     }
   };
-  if (!this.isAlive) {
-    throw new Error('Your pet is no longer alive :(');
-  }
+
 
   this.checkUp = function () {
     this.fitness;
@@ -61,6 +59,7 @@ function Pet(name) {
       return this.age < 30 && this.hunger < 10 && this.fitness > 0;
     }
   };
+
   Pet.prototype.feed = function(){
     if(!this.isAlive) {
         throw new Error('Your pet is no longer alive :(');
@@ -75,12 +74,7 @@ Pet.prototype.growUp = function() {
     if(!this.isAlive) {
         throw new Error('Your pet is no longer alive :(');
       }
-}
-const pet = {
-    name: 'Fido'
-};
-let fido = new Pet("Fido");
-
+    };
 
 
 };
